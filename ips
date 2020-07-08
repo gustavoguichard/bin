@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+# $stdin.each_line do |line|
+ARGF.each_line do |line|
+  ips = line.scan(/\d+\.\d+\.\d+\.\d+/)
+  ips.each do |ip|
+    puts ip
+  end
+end

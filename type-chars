@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+$stdout.sync = true
+
+time = 0.1
+ARGV.delete_if do |a|
+  a =~ /[\d\.]?\d+/ && time = a.to_f
+end
+
+ARGF.each_line do |line|
+  line.each_char do |c|
+    print c
+    sleep time
+  end
+end
